@@ -42,7 +42,7 @@ _Pantalla de ajustes_
 
 - [ ] Maquetea según el diseño solicitado
 - [ ] El componente de batería debe consistir de un card con 100 Views que represente de forma visual con color verde la batería actual del dispositivo
-- [ ] Arregla los problemas que hay en el módulo nativo
-- [ ] Devuelve las variables batería, modelo y sistema operativo desde contexto de ejecución nativo.
+- [ ] Arregla los problemas que hay en el módulo nativo DeviceInfoModule que se encuentra en la carpeta iOS. Hay 1 error en `ios/DeviceInfoModule.m`, 1 error en `ios/DeviceInfoModule-Bridging-Header.h`
+- [ ] Extrae las variables batería, modelo y sistema operativo desde el contexto de ejecución nativo.
 
 Buena suerte potencial compañero!
