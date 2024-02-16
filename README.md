@@ -6,6 +6,9 @@ Esta es una pruena técnica para evaluar las capacidades y habilidades de desarr
 
 <img width="231" alt="image" src="https://github.com/agendapro/SeniorTestMobile/assets/102041608/76980e77-9155-44f8-b81f-7a8ba44570f9">
 
+![iPhone 13 Pro](https://github.com/agendapro/SeniorTestMobile/assets/104234396/eff9e5fd-b243-48ed-9b8a-089e528cd01d)
+
+
 El periodo de desarrollo para este ejercicio es de 5 días desde su recepción. Si la prueba es enviada fuera de plazo, el candidato será descalificado y no continuará en el proceso de selección.
 
 Para comenzar con tu trabajo, debes crear una rama con tu nombre y apellido. Ejemplo: interview/juan-perez y realizar los commits en esta. Realiza tus commits de forma progresiva como lo harías en tu día a día.
