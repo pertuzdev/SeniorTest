@@ -35,6 +35,10 @@ Se necesita listar los personajes de la famosa serie de películas "Star Wars". 
 ### Pantalla de detalle del personaje
 
 - [ ] Maquetea según el diseño solicitado
+- [ ] los iconos se deben mostrar de la siguiente forma : 
+  - si el genero del personaje es masculino, se debe mostrar el simbolo masculino, lo mismo para el genero femenino. En caso de que el personaje no tenga genero, de mostrarse el test "N/A"
+  - si el personaje ha piloteado alguna nave espacial, debe mostrar el icono de nave. de lo contrario debe mostrarse el text "N/A"
+  - si el personaje ha aparecido en más de 3 peliculas de la franquicia, debe mostrarse el icono de pulgar arriba, sino mostrar el icono de pulgar abajo
 - [ ] Recibir por parámetro [...] <- Gabo aquí
 
 ### Pantalla de ajustes
