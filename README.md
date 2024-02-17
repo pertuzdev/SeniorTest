@@ -41,7 +41,7 @@ Se necesita listar los personajes de la famosa serie de películas "Star Wars". 
   - si el personaje ha piloteado alguna nave espacial, debe mostrar el icono de nave. de lo contrario debe mostrarse el text "N/A"
   - si el personaje ha aparecido en más de 3 peliculas de la franquicia, debe mostrarse el icono de pulgar arriba, sino mostrar el icono de pulgar abajo
 - [ ] Recibir por parámetro [...] <- Gabo aquí
-- [ ] Se debe habilitar contexto propuesto para el manejo de estados entre componentes.
+- [ ] Se debe habilitar y completar el contexto propuesto en el proyecto para el manejo de estados/propiedades entre componentes.
 
 ### Pantalla de ajustes
 
