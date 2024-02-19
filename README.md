@@ -23,9 +23,9 @@ Para comenzar con tu trabajo, debes crear una rama con tu nombre y apellido. Eje
 
 ### Pantalla de Personajes
 
-Se necesita listar los personajes de la famosa serie de películas "Star Wars". Donde de mostrarán todos los personajes de la franquicia, además de mostrar la información personal de cada uno de ellos (estatura, color de pelo, etc).
+Se necesita listar los personajes de la famosa serie de películas "Star Wars". Donde se mostrarán todos los personajes de la franquicia, además de mostrar la información personal de cada uno de ellos (estatura, color de pelo, etc).
 
-- [ ] Maquetea según el diseño solicitado
+- [ ] Maqueta según el diseño solicitado
 - [ ] El listado de personajes debe listar todos los personajes de la franquicia de manera "infinita".
 - [ ] Es necesario optimizar la aplicación lo más posible bajo las buenas practicas con React native
 - [ ] Se debe implementar las interfaces con la siguiente API : https://swapi.dev/documentation.
@@ -34,16 +34,16 @@ Se necesita listar los personajes de la famosa serie de películas "Star Wars". 
 
 ### Pantalla de detalle del personaje
 
-- [ ] Maquetea según el diseño solicitado
+- [ ] Maqueta según el diseño solicitado
 - [ ] los iconos se deben mostrar de la siguiente forma : 
   - si el genero del personaje es masculino, se debe mostrar el simbolo masculino, lo mismo para el genero femenino. En caso de que el personaje no tenga genero, de mostrarse el test "N/A"
-  - si el personaje ha piloteado alguna nave espacial, debe mostrar el icono de nave. de lo contrario debe mostrarse el text "N/A"
+  - si el personaje ha pilotado alguna nave espacial, debe mostrar el icono de nave. de lo contrario debe mostrarse el text "N/A"
   - si el personaje ha aparecido en más de 3 peliculas de la franquicia, debe mostrarse el icono de pulgar arriba, sino mostrar el icono de pulgar abajo
 - [ ] Recibir por parámetro [...] <- Gabo aquí
 
 ### Pantalla de ajustes
 
-- [ ] Maquetea según el diseño solicitado
+- [ ] Maqueta según el diseño solicitado
 - [ ] El componente de batería debe consistir de un card con 100 Views que represente de forma visual con color verde la batería actual del dispositivo
 - [ ] Arregla los problemas que hay en el módulo nativo DeviceInfoModule que se encuentra en la carpeta iOS. Hay 1 error en `ios/DeviceInfoModule.m`, 1 error en `ios/DeviceInfoModule-Bridging-Header.h`
 - [ ] Extrae las variables batería, modelo y sistema operativo desde el contexto de ejecución nativo.
