@@ -30,6 +30,7 @@ Se necesita listar los personajes de la famosa serie de películas "Star Wars". 
 - [ ] Es necesario optimizar la aplicación lo más posible bajo las buenas practicas con React native
 - [ ] Se debe implementar las interfaces con la siguiente API : https://swapi.dev/documentation.
 
+
 ### Pantalla de detalle del personaje
 
 - [ ] Maqueta según el diseño solicitado
@@ -37,6 +38,7 @@ Se necesita listar los personajes de la famosa serie de películas "Star Wars". 
   - si el genero del personaje es masculino, se debe mostrar el simbolo masculino, lo mismo para el genero femenino. En caso de que el personaje no tenga genero, de mostrarse el test "N/A"
   - si el personaje ha pilotado alguna nave espacial, debe mostrar el icono de nave. de lo contrario debe mostrarse el text "N/A"
   - si el personaje ha aparecido en más de 3 peliculas de la franquicia, debe mostrarse el icono de pulgar arriba, sino mostrar el icono de pulgar abajo
+- [ ] Se debe habilitar y completar el contexto propuesto en el proyecto para el manejo de estados/propiedades entre componentes.
 
 ### Pantalla de ajustes
 
