@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, ReactNode } from 'react';
+import React, {ReactNode, createContext, useState} from 'react';
 
 interface Item {
   prop1: string;
@@ -15,16 +15,15 @@ interface GlobalProviderProps {
   children: ReactNode;
 }
 
-export const GlobalProvider: React.FC<GlobalProviderProps> = ({ children }) => {
+export const GlobalProvider: React.FC<GlobalProviderProps> = ({children}) => {
   const [item, setCurrentItem] = useState<Item | null>(null);
 
   const setCurrent = (userData: Item) => {
     setCurrentItem(userData);
   };
 
-
   return (
-    <GlobalContext.Provider value={{ item, setCurrent }}>
+    <GlobalContext.Provider value={{item, setCurrent}}>
       {children}
     </GlobalContext.Provider>
   );

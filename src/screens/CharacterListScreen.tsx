@@ -1,3 +1,7 @@
+import {HomeNavigatorRoutes} from '@/navigation/HomeNavigator/HomeNavigator';
+import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
+import {useNavigation} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React, {useEffect, useState} from 'react';
 import {
   FlatList,
@@ -27,7 +31,9 @@ interface StarWarsCharacter {
   edited: string;
 }
 
-const MainScreen = () => {
+const CharacterListScreen = () => {
+  const navigation =
+    useNavigation<NativeStackNavigationProp<HomeNavigatorParamList>>();
   const [starWarsCharacter, setStarWarsCharacters] = useState<
     StarWarsCharacter[] | []
   >([]);
@@ -88,7 +94,9 @@ const MainScreen = () => {
           return (
             <Pressable
               style={styles.itemContainer}
-              onPress={() => console.log('caca')}>
+              onPress={() =>
+                navigation.navigate(HomeNavigatorRoutes.CharacterDetail)
+              }>
               <View
                 style={{
                   backgroundColor: 'white',
@@ -131,4 +139,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MainScreen;
+export default CharacterListScreen;
