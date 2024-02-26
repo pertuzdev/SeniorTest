@@ -6,5 +6,8 @@ export const useGetCharacters = ({search}: {search?: string}) => {
   return useLoadMore<StarWarsCharacter, {search: string | undefined}>({
     url: routes.people,
     params: {search},
+    config: {
+      staleTime: 5000,
+    },
   });
 };
