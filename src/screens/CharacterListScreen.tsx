@@ -1,8 +1,9 @@
+import {useGetCharacters} from '@/modules/Wiki/services';
 import {HomeNavigatorRoutes} from '@/navigation/HomeNavigator/HomeNavigator';
 import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {
   FlatList,
   Pressable,
@@ -12,34 +13,10 @@ import {
   View,
 } from 'react-native';
 
-interface StarWarsCharacter {
-  name: string;
-  birth_year: string;
-  eye_color: string;
-  gender: string;
-  hair_color: string;
-  height: string;
-  mass: string;
-  skin_color: string;
-  homeworld: string;
-  films: string[];
-  species: string[];
-  starships: string[];
-  vehicles: string[];
-  url: string;
-  created: string;
-  edited: string;
-}
-
 const CharacterListScreen = () => {
   const navigation =
     useNavigation<NativeStackNavigationProp<HomeNavigatorParamList>>();
-  const [starWarsCharacter, setStarWarsCharacters] = useState<
-    StarWarsCharacter[] | []
-  >([]);
-  const [searchResults, setsearchResults] = useState<StarWarsCharacter[] | []>(
-    [],
-  );
+
   const [search, setSearch] = useState('');
 
   const getNameInitials = (name: string) => {
@@ -47,31 +24,8 @@ const CharacterListScreen = () => {
     return nameArray[0][0] + nameArray[nameArray.length - 1][0];
   };
 
-  useEffect(() => {
-    const getStarWarsCharacters = async () => {
-      const response = await fetch('https://swapi.dev/api/people/');
-      const data = await response.json();
-
-      setStarWarsCharacters(data.results);
-    };
-
-    getStarWarsCharacters();
-  });
-
-  useEffect(() => {
-    if (search !== '') {
-      const searchCharacters = async () => {
-        const response = await fetch(
-          `https://swapi.dev/api/people/?search=${search}`,
-        );
-        const data = await response.json();
-
-        setsearchResults(data.results);
-      };
-
-      searchCharacters();
-    }
-  }, [search]);
+  const {data} = useGetCharacters({search});
+  const characters = data?.pages.flatMap(page => page.results);
 
   return (
     <View style={{flex: 1}}>
@@ -88,7 +42,7 @@ const CharacterListScreen = () => {
       />
 
       <FlatList
-        data={searchResults.length > 0 ? searchResults : starWarsCharacter}
+        data={characters}
         style={{flex: 1}}
         renderItem={({item}) => {
           return (
@@ -112,8 +66,12 @@ const CharacterListScreen = () => {
                 </View>
 
                 <View style={{marginTop: 10}}>
-                  <Text style={{fontWeight: 'bold'}}>{item.name}</Text>
-                  <Text>fecha de nacimiento: {item.birth_year}</Text>
+                  <Text style={{fontWeight: 'bold', color: 'black'}}>
+                    {item.name}
+                  </Text>
+                  <Text style={{color: 'black'}}>
+                    fecha de nacimiento: {item.birth_year}
+                  </Text>
                 </View>
               </View>
             </Pressable>

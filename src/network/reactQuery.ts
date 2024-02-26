@@ -31,18 +31,23 @@ export const fetcher = <T>({
     .then(res => res.data);
 };
 
-export const useLoadMore = <T, S = undefined>(
-  url: string | null,
-  params?: Params<S>,
+export const useLoadMore = <T, S = undefined>({
+  url,
+  params,
+  config,
+  meta,
+}: {
+  url: string | null;
+  params?: Params<S>;
   config?: UseInfiniteQueryOptions<
     PaginatedQueryData<T>,
     Error,
     PaginatedQueryData<T>,
     PaginatedQueryData<T>,
     QueryKeyT
-  >,
-  meta?: QueryMeta,
-) => {
+  >;
+  meta?: QueryMeta;
+}) => {
   const context = useInfiniteQuery<
     PaginatedQueryData<T>,
     Error,
