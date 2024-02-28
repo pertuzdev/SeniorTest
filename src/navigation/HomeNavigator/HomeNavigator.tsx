@@ -1,7 +1,7 @@
 import React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import CharacterListScreen from '@/screens/CharacterListScreen/CharacterListScreen';
-import CharacterDetailScreen from '@/screens/CharacterDetailScreen';
+import CharacterDetailScreen from '@/screens/CharacterDetailScreen/CharacterDetailScreen';
 import {HomeNavigatorParamList} from './HomeNavigator.types';
 
 const Stack = createNativeStackNavigator<HomeNavigatorParamList>();

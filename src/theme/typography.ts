@@ -3,7 +3,7 @@ import {StyleSheet} from 'react-native';
 export const typography = StyleSheet.create({
   title: {
     fontSize: 18,
-    fontWeight: '700',
+    fontWeight: '500',
   },
   text: {
     fontSize: 16,

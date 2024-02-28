@@ -4,7 +4,7 @@ import React from 'react';
 import HomeNavigator from '../HomeNavigator/HomeNavigator';
 import {BottomTabNavigatorParamList} from './AppNavigator.types';
 import {TabBarIcon} from '@/components/ui/TabBarIcon/TabBarIcon';
-import {useCustomTheme} from '@/components/hooks/useCustomTheme';
+import {useCustomTheme} from '@/hooks/useCustomTheme';
 
 export enum AppNavigatorRoutes {
   Home = 'Home',

@@ -1,2 +1,3 @@
 export * from './loaders';
-export * from './AppText';
+export {AppText} from './AppText';
+export {Avatar} from './Avatar';

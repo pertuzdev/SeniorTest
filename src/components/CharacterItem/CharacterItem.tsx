@@ -1,16 +1,16 @@
 import {HomeNavigatorRoutes} from '@/navigation/HomeNavigator/HomeNavigator';
 import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
-import {getNameInitials} from '@/utils/getNameInitials';
+import {typography} from '@/theme';
 import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Pressable, View} from 'react-native';
-import {useCustomTheme} from '../hooks/useCustomTheme';
+import {useCustomTheme} from '../../hooks/useCustomTheme';
 import {AppText} from '../ui';
+import Avatar from '../ui/Avatar/Avatar';
+import {AngleRight} from '../ui/icons/icons';
 import {styles} from './CharacterItem.styles';
 import {CharacterItemProps} from './CharacterItem.types';
-import {typography} from '@/theme';
-import {ArrowRight} from '../ui/icons/icons';
 
 const CharacterItem = ({character}: CharacterItemProps) => {
   const {colors} = useCustomTheme();
@@ -26,11 +26,7 @@ const CharacterItem = ({character}: CharacterItemProps) => {
           {backgroundColor: colors.card},
         ]}>
         <View style={styles.cardLeft}>
-          <View style={[styles.avatar, {borderColor: colors.text}]}>
-            <AppText style={styles.nameInitials}>
-              {getNameInitials(character.name)}
-            </AppText>
-          </View>
+          <Avatar name={character.name} />
 
           <View>
             <AppText style={[styles.characterName, typography.text]}>
@@ -39,7 +35,7 @@ const CharacterItem = ({character}: CharacterItemProps) => {
             <AppText style={[typography.text]}>{character.birth_year}</AppText>
           </View>
         </View>
-        <ArrowRight width={20} height={20} />
+        <AngleRight width={20} height={20} />
       </View>
     </Pressable>
   );

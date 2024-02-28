@@ -27,4 +27,7 @@ export const styles = StyleSheet.create({
   tagsRow: {
     gap: 12,
   },
+  title: {
+    color: '#000',
+  },
 });

@@ -6,15 +6,7 @@ export const styles = StyleSheet.create({
     marginHorizontal: 16,
     marginVertical: 6,
   },
-  avatar: {
-    width: 50,
-    height: 50,
-    borderRadius: 25,
-    borderWidth: 2,
-    backgroundColor: 'lightgray',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
+
   characterContentWrapper: {
     paddingHorizontal: 20,
     paddingVertical: 14,
@@ -31,8 +23,5 @@ export const styles = StyleSheet.create({
   },
   characterName: {
     fontWeight: 'bold',
-  },
-  nameInitials: {
-    color: '#000',
   },
 });

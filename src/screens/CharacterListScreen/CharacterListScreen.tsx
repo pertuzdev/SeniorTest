@@ -1,6 +1,6 @@
 import {Header} from '@/components';
 import CharacterList from '@/components/CharacterList/CharacterList';
-import {useCustomTheme} from '@/components/hooks/useCustomTheme';
+import {useCustomTheme} from '@/hooks/useCustomTheme';
 import React, {useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {styles} from './CharacterListScreen.styles';
@@ -11,7 +11,7 @@ const CharacterListScreen = () => {
 
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <Header title="Personajes" />
+      <Header title="Personajes" isThemeToggle />
 
       <TextInput
         style={[
