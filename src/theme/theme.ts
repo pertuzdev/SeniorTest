@@ -22,7 +22,7 @@ export const theme: CustomTheme = {
     colors: {
       ...DefaultTheme.colors,
       primary: '#f4ba0d',
-      secondary: '#29434E',
+      secondary: '#2d3748',
       error: '#D32F2F',
       text: '#212121',
       border: '#00000026',
@@ -39,7 +39,7 @@ export const theme: CustomTheme = {
     colors: {
       ...DarkTheme.colors,
       primary: '#f4ba0d',
-      secondary: '#29434E',
+      secondary: '#2d3748',
       error: '#D32F2F',
       text: '#fafafa',
       border: '#FFFFFF',

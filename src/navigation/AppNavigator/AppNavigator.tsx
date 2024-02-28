@@ -1,4 +1,4 @@
-import SettingsScreen from '@/screens/SettingsScreen';
+import SettingsScreen from '@/screens/SettingsScreen/SettingsScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
 import HomeNavigator from '../HomeNavigator/HomeNavigator';
@@ -42,6 +42,9 @@ const AppNavigator = () => {
       <Tabs.Screen
         name={AppNavigatorRoutes.Settings}
         component={SettingsScreen}
+        options={() => ({
+          headerShown: false,
+        })}
       />
     </Tabs.Navigator>
   );

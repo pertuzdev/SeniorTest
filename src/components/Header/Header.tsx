@@ -18,9 +18,12 @@ const Header = ({
   title,
   isThemeToggle = false,
   isBackButton = false,
+  backgroundColor,
+  titleColor,
 }: HeaderProps) => {
   const safeArea = useSafeAreaInsets();
   const {colors} = useTheme();
+  const bgColorSelected = backgroundColor || colors.primary;
   const navigation =
     useNavigation<NativeStackNavigationProp<HomeNavigatorParamList>>();
 
@@ -34,16 +37,17 @@ const Header = ({
         <View
           style={[
             {
-              backgroundColor: colors.primary,
+              backgroundColor: bgColorSelected,
               height: safeArea.top,
             },
           ]}
         />
       ) : (
-        <StatusBar barStyle="dark-content" backgroundColor={colors.primary} />
+        <StatusBar barStyle="dark-content" backgroundColor={bgColorSelected} />
       )}
 
-      <View style={[styles.headerContainer, {backgroundColor: colors.primary}]}>
+      <View
+        style={[styles.headerContainer, {backgroundColor: bgColorSelected}]}>
         {isBackButton && (
           <Pressable hitSlop={10} onPress={handleGoBack}>
             <ArrowLeftIcon width={24} height={24} />
@@ -57,6 +61,7 @@ const Header = ({
               {
                 marginLeft: isBackButton ? -ICON_SIZE : ZERO,
                 marginRight: isThemeToggle ? -ICON_SIZE : ZERO,
+                color: titleColor,
               },
             ]}>
             {title}
