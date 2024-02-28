@@ -1,17 +1,35 @@
 import React from 'react';
 
-import {RootNavigator} from '@/navigation';
-import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
-import {ThemeProvider} from '@/context/ThemeContext';
 import {CharacterProvider} from '@/context/CharacterContext';
+import {ThemeProvider} from '@/context/ThemeContext';
+import {RootNavigator} from '@/navigation';
+import {
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+
+import {toastConfig, toastNotification} from '@/utils/toast';
+import Toast from 'react-native-toast-message';
 
 function App(): React.JSX.Element {
-  const queryClient = new QueryClient();
+  const queryClient = new QueryClient({
+    queryCache: new QueryCache({
+      onError: () => {
+        toastNotification({
+          type: 'error',
+          message: 'Something went wrong, please try again later',
+          position: 'top',
+        });
+      },
+    }),
+  });
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
         <CharacterProvider>
           <RootNavigator />
+          <Toast config={toastConfig} />
         </CharacterProvider>
       </ThemeProvider>
     </QueryClientProvider>

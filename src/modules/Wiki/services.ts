@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import {Film, Planet, Species, StarWarsCharacter} from './interfaces';
 import {routes} from './routes';
 import {DEFAULT_SPECIES_URL} from './contants';
+import {toastNotification} from '@/utils/toast';
 
 export const useGetCharacters = ({search}: {search?: string}) => {
   return useLoadMore<StarWarsCharacter, {search: string | undefined}>({
@@ -44,7 +45,12 @@ export const useGetFilms = ({filmsURL}: {filmsURL: string[] | undefined}) => {
         );
         setFilmsTitles(films);
       } catch {
-        console.log('Error');
+        toastNotification({
+          type: 'error',
+          message:
+            'Something went wrong fetching the films, please try again later',
+          position: 'top',
+        });
       } finally {
         setIsFilmsLoading(false);
       }
@@ -84,7 +90,12 @@ export const useGetSpecies = ({
 
           setSpecies([speciesFetched]);
         } catch {
-          console.log('error');
+          toastNotification({
+            type: 'error',
+            message:
+              'Something went wrong fetching species, please try again later',
+            position: 'top',
+          });
         } finally {
           setIsSpeciesLoading(false);
         }
@@ -103,7 +114,12 @@ export const useGetSpecies = ({
         );
         setSpecies(speciesFetched);
       } catch {
-        console.log('Error');
+        toastNotification({
+          type: 'error',
+          message:
+            'Something went wrong fetching species, please try again later',
+          position: 'top',
+        });
       } finally {
         setIsSpeciesLoading(false);
       }
