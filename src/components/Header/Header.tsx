@@ -45,19 +45,22 @@ const Header = ({
 
       <View style={[styles.headerContainer, {backgroundColor: colors.primary}]}>
         {isBackButton && (
-          <Pressable onPress={handleGoBack}>
+          <Pressable hitSlop={10} onPress={handleGoBack}>
             <ArrowLeftIcon width={24} height={24} />
           </Pressable>
         )}
-        <View
-          style={[
-            styles.rowWrapper,
-            {
-              marginLeft: isBackButton ? -ICON_SIZE : ZERO,
-              marginRight: isThemeToggle ? -ICON_SIZE : ZERO,
-            },
-          ]}>
-          <Text style={[styles.title, typography.title]}>{title}</Text>
+        <View style={[styles.rowWrapper]}>
+          <Text
+            style={[
+              styles.title,
+              typography.title,
+              {
+                marginLeft: isBackButton ? -ICON_SIZE : ZERO,
+                marginRight: isThemeToggle ? -ICON_SIZE : ZERO,
+              },
+            ]}>
+            {title}
+          </Text>
         </View>
         {isThemeToggle && <ThemeToggle />}
       </View>
