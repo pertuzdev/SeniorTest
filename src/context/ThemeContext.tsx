@@ -27,7 +27,7 @@ interface ThemeProviderProps {
 export const useUserTheme = () => {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useSidebarContext must be used within a ThemeProvider');
+    throw new Error('context must be used within a ThemeProvider');
   }
   return context;
 };

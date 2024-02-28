@@ -6,7 +6,7 @@ import {AppText} from '../ui';
 import {styles} from './CharacterInfoRow.styles';
 import {CharacterRowProps} from './CharacterInfoRow.types';
 
-const CharacterInfoRow = ({children}: CharacterRowProps) => {
+const CharacterInfoRow = ({title, children}: CharacterRowProps) => {
   const {colors} = useCustomTheme();
   return (
     <View style={styles.infoRow}>
@@ -16,7 +16,7 @@ const CharacterInfoRow = ({children}: CharacterRowProps) => {
           styles.infoRowLabel,
           {color: colors.mediumGray},
         ]}>
-        height
+        {title}
       </AppText>
       <View>{children}</View>
       <View style={[styles.line, {backgroundColor: colors.border}]} />

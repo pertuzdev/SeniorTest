@@ -11,7 +11,7 @@ const Avatar = ({
   height = 50,
   width = 50,
 }: {
-  name: string;
+  name: string | undefined;
   width?: number;
   height?: number;
 }) => {

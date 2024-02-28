@@ -92,7 +92,7 @@ export const RocketIcon = (props: CustomIconProps) => (
   </Svg>
 );
 
-export const GenderIcon = (props: CustomIconProps) => (
+export const MarsIcon = (props: CustomIconProps) => (
   <Svg
     xmlns="http://www.w3.org/2000/svg"
     data-name="Layer 1"
@@ -105,11 +105,33 @@ export const GenderIcon = (props: CustomIconProps) => (
   </Svg>
 );
 
+export const VenusIcon = (props: CustomIconProps) => (
+  <Svg
+    xmlns="http://www.w3.org/2000/svg"
+    data-name="Layer 1"
+    viewBox="0 0 24 24"
+    {...props}>
+    <Path
+      fill={props?.color || '#000'}
+      d="M19 9a7 7 0 1 0-8 6.92V18h-1a1 1 0 0 0 0 2h1v1a1 1 0 0 0 2 0v-1h1a1 1 0 0 0 0-2h-1v-2.08A7 7 0 0 0 19 9Zm-7 5a5 5 0 1 1 5-5 5 5 0 0 1-5 5Z"
+    />
+  </Svg>
+);
+
 export const ThumbsUpIcon = (props: CustomIconProps) => (
   <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
     <Path
       fill={props?.color || '#000'}
       d="M21.3 10.08A3 3 0 0 0 19 9h-4.56L15 7.57A4.13 4.13 0 0 0 11.11 2a1 1 0 0 0-.91.59L7.35 9H5a3 3 0 0 0-3 3v7a3 3 0 0 0 3 3h12.73a3 3 0 0 0 2.95-2.46l1.27-7a3 3 0 0 0-.65-2.46ZM7 20H5a1 1 0 0 1-1-1v-7a1 1 0 0 1 1-1h2Zm13-7.82-1.27 7a1 1 0 0 1-1 .82H9v-9.79l2.72-6.12a2.11 2.11 0 0 1 1.38 2.78l-.53 1.43a2 2 0 0 0 1.87 2.7H19a1 1 0 0 1 .77.36 1 1 0 0 1 .23.82Z"
+    />
+  </Svg>
+);
+
+export const ThumbsDownIcon = (props: CustomIconProps) => (
+  <Svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" {...props}>
+    <Path
+      fill={props?.color || '#000'}
+      d="M19 2H6.27a3 3 0 0 0-2.95 2.46l-1.27 7A3 3 0 0 0 5 15h4.56L9 16.43A4.13 4.13 0 0 0 12.89 22a1 1 0 0 0 .91-.59L16.65 15H19a3 3 0 0 0 3-3V5a3 3 0 0 0-3-3Zm-4 11.79-2.72 6.12a2.13 2.13 0 0 1-1.38-2.78l.53-1.43A2 2 0 0 0 9.56 13H5a1 1 0 0 1-.77-.36 1 1 0 0 1-.23-.82l1.27-7a1 1 0 0 1 1-.82H15ZM20 12a1 1 0 0 1-1 1h-2V4h2a1 1 0 0 1 1 1Z"
     />
   </Svg>
 );

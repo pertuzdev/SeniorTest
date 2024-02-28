@@ -1,32 +1,55 @@
 import React from 'react';
 import {View} from 'react-native';
 import {AppText, Avatar} from '../ui';
-import {GenderIcon, RocketIcon, ThumbsUpIcon} from '../ui/icons/icons';
+import {
+  MarsIcon,
+  RocketIcon,
+  ThumbsDownIcon,
+  ThumbsUpIcon,
+  VenusIcon,
+} from '../ui/icons/icons';
 import {typography} from '@/theme';
 import {styles} from './CharacterProfile.styles';
 import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {useCharacter} from '@/context/CharacterContext';
 
 const CharacterProfile = () => {
   const {colors} = useCustomTheme();
+  const {character} = useCharacter();
+
   return (
     <View style={[styles.profile, {backgroundColor: colors.primary}]}>
       <View>
-        <Avatar name="Luke Sky" width={90} height={90} />
+        <Avatar name={character?.name} width={90} height={90} />
       </View>
 
       <AppText style={[typography.title, styles.characterName]}>
-        Luke Skywalker
+        {character?.name}
       </AppText>
 
       <View style={styles.iconsWrapper}>
         <View style={styles.badge}>
-          <GenderIcon width={30} height={30} />
+          {character?.gender === 'male' ? (
+            <MarsIcon width={30} height={30} />
+          ) : character?.gender === 'female' ? (
+            <VenusIcon width={30} height={30} />
+          ) : (
+            <AppText>N/A</AppText>
+          )}
         </View>
         <View style={styles.badge}>
-          <RocketIcon width={30} height={30} />
+          {character?.starships && character.starships.length > 0 ? (
+            <RocketIcon width={30} height={30} />
+          ) : (
+            <AppText>N/A</AppText>
+          )}
         </View>
         <View style={styles.badge}>
-          <ThumbsUpIcon width={30} height={30} />
+          {character?.films && character.films.length > 3 ? (
+            <ThumbsUpIcon width={30} height={30} />
+          ) : (
+            <ThumbsDownIcon width={30} height={30} />
+          )}
         </View>
       </View>
     </View>

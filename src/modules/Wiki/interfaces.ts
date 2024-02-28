@@ -2,7 +2,7 @@ export interface StarWarsCharacter {
   name: string;
   birth_year: string;
   eye_color: string;
-  gender: string;
+  gender: 'male' | 'female' | 'hermaphrodite' | 'n/a';
   hair_color: string;
   height: string;
   mass: string;

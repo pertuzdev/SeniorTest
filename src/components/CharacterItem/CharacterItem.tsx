@@ -11,15 +11,23 @@ import Avatar from '../ui/Avatar/Avatar';
 import {AngleRight} from '../ui/icons/icons';
 import {styles} from './CharacterItem.styles';
 import {CharacterItemProps} from './CharacterItem.types';
+import {useCharacter} from '@/context/CharacterContext';
 
 const CharacterItem = ({character}: CharacterItemProps) => {
   const {colors} = useCustomTheme();
+  const {setCurrent} = useCharacter();
+
   const navigation =
     useNavigation<NativeStackNavigationProp<HomeNavigatorParamList>>();
+
+  const handleNavigateToDetail = () => {
+    setCurrent(character);
+    navigation.navigate(HomeNavigatorRoutes.CharacterDetail);
+  };
   return (
     <Pressable
       style={styles.characterContainer}
-      onPress={() => navigation.navigate(HomeNavigatorRoutes.CharacterDetail)}>
+      onPress={handleNavigateToDetail}>
       <View
         style={[
           styles.characterContentWrapper,

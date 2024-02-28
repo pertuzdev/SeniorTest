@@ -16,7 +16,9 @@ export const styles = StyleSheet.create({
   },
   badge: {
     backgroundColor: '#fff',
-    padding: 8,
-    borderRadius: 50,
+    padding: 10,
+    borderRadius: 100,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
