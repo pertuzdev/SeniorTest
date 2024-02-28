@@ -13,7 +13,7 @@ const ThemeToggle = () => {
     });
   };
   return (
-    <Pressable onPress={handlePress} hitSlop={10}>
+    <Pressable style={{zIndex: 3}} onPress={handlePress} hitSlop={10}>
       {!theme ? null : theme === 'dark' ? (
         <MoonIcon width={20} height={20} />
       ) : (

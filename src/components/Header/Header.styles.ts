@@ -11,7 +11,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     height: HEADER_HEIGHT,
     paddingHorizontal: 16,
-    zIndex: 1,
   },
   rowWrapper: {
     flex: 1,
