@@ -49,3 +49,19 @@ export const SunIcon = (props: CustomIconProps) => (
     />
   </Svg>
 );
+
+export const ArrowRight = (props: CustomIconProps) => (
+  <Svg
+    viewBox="0 0 7 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}>
+    <Path
+      d="M1 11L6 6L1 1"
+      stroke={props?.color || '#000'}
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </Svg>
+);

@@ -3,28 +3,36 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   characterContainer: {
     flex: 1,
-    marginHorizontal: 8,
+    marginHorizontal: 16,
+    marginVertical: 6,
   },
   avatar: {
     width: 50,
     height: 50,
     borderRadius: 25,
+    borderWidth: 2,
     backgroundColor: 'lightgray',
     justifyContent: 'center',
     alignItems: 'center',
   },
   characterContentWrapper: {
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
+    paddingHorizontal: 20,
+    paddingVertical: 14,
     borderRadius: 10,
     flexDirection: 'row',
-    gap: 10,
+    alignItems: 'center',
+    backgroundColor: 'red',
   },
-  textWrapper: {
-    marginTop: 10,
+  cardLeft: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
   },
   characterName: {
     fontWeight: 'bold',
+  },
+  nameInitials: {
+    color: '#000',
   },
 });

@@ -45,7 +45,7 @@ export const theme: CustomTheme = {
       border: '#FFFFFF',
       activeTab: '#4FC3F7',
       inactiveTab: '#FFFFFF',
-      background: '#18181a',
+      background: '#1d1d1f',
       card: '#09090b',
       lightGray: '#00000026',
       mediumGray: '#d6d4d4',

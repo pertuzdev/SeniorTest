@@ -4,6 +4,7 @@ import React from 'react';
 import HomeNavigator from '../HomeNavigator/HomeNavigator';
 import {BottomTabNavigatorParamList} from './AppNavigator.types';
 import {TabBarIcon} from '@/components/ui/TabBarIcon/TabBarIcon';
+import {useCustomTheme} from '@/components/hooks/useCustomTheme';
 
 export enum AppNavigatorRoutes {
   Home = 'Home',
@@ -12,6 +13,7 @@ export enum AppNavigatorRoutes {
 
 const Tabs = createBottomTabNavigator<BottomTabNavigatorParamList>();
 const AppNavigator = () => {
+  const {colors} = useCustomTheme();
   const renderTabBarIcon = ({
     color,
     routeName,
@@ -26,7 +28,7 @@ const AppNavigator = () => {
       initialRouteName={AppNavigatorRoutes.Home}
       screenOptions={({route}) => ({
         tabBarHideOnKeyboard: true,
-        tabBarActiveTintColor: 'red',
+        tabBarActiveTintColor: colors.primary,
         tabBarIcon: ({color}) =>
           renderTabBarIcon({color, routeName: route.name}),
       })}>
