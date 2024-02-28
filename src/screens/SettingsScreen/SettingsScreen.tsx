@@ -1,10 +1,11 @@
 import {Header} from '@/components';
+import Battery from '@/components/Battery/Battery';
 import {AppText} from '@/components/ui';
+import CardInfo from '@/components/ui/CardInfo/CardInfo';
 import {useCustomTheme} from '@/hooks/useCustomTheme';
 import React from 'react';
 import {View} from 'react-native';
 import {styles} from './SettingsScreen.styles';
-import {shadow, typography} from '@/theme';
 
 const SettingsScreen = () => {
   const {colors} = useCustomTheme();
@@ -17,65 +18,17 @@ const SettingsScreen = () => {
       />
       <View style={styles.contentWrapper}>
         <View style={styles.cardWrapper}>
-          <View
-            style={[
-              styles.card,
-              shadow.primary,
-              {backgroundColor: colors.card},
-            ]}>
-            <AppText
-              style={[
-                typography.smallLabel,
-                styles.cardLabel,
-                {color: colors.mediumGray},
-              ]}>
-              Modelo
-            </AppText>
+          <CardInfo label="Modelo">
             <AppText style={styles.phoneData}>iPhone</AppText>
-          </View>
-          <View
-            style={[
-              styles.card,
-              shadow.primary,
-              {backgroundColor: colors.card},
-            ]}>
-            <AppText
-              style={[
-                typography.smallLabel,
-                styles.cardLabel,
-                {color: colors.mediumGray},
-              ]}>
-              Sistema operativo
-            </AppText>
+          </CardInfo>
+          <CardInfo label="Sistema operativo">
             <AppText style={styles.phoneData}>17.0.2</AppText>
-          </View>
+          </CardInfo>
         </View>
         <View style={styles.cardWrapper}>
-          <View
-            style={[
-              styles.card,
-              shadow.primary,
-              {backgroundColor: colors.card},
-            ]}>
-            <AppText
-              style={[
-                typography.smallLabel,
-                styles.cardLabel,
-                {color: colors.mediumGray},
-              ]}>
-              Bateria
-            </AppText>
-            <View style={styles.batteryWrapper}>
-              <View style={styles.battery}>
-                {[...Array(100)].map((item, index) => (
-                  <View key={index} style={styles.batteryLine} />
-                ))}
-              </View>
-              <AppText style={[styles.batteryPercentage, typography.heading]}>
-                100%
-              </AppText>
-            </View>
-          </View>
+          <CardInfo label="Batería">
+            <Battery />
+          </CardInfo>
         </View>
       </View>
     </View>
