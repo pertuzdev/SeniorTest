@@ -2,10 +2,13 @@ import {
   QueryFunctionContext,
   QueryMeta,
   UseInfiniteQueryOptions,
+  UseQueryOptions,
   useInfiniteQuery,
+  useQuery,
 } from '@tanstack/react-query';
 
 import {apiClient} from './apiClient';
+import {AxiosRequestConfig} from 'axios';
 
 type QueryKeyT = [string, object | undefined];
 
@@ -18,7 +21,19 @@ interface PaginatedQueryData<DataType> {
   next: string | null;
 }
 
-export const fetcher = <T>({
+export type fetcherProps = {
+  url: string;
+  method: 'get' | 'post' | 'put' | 'delete' | 'patch';
+  data?: object;
+  config?: AxiosRequestConfig<object> | undefined;
+};
+
+export const fetcher = async <T>({url, method, data, config}: fetcherProps) => {
+  const response = await apiClient[method]<T>(url, data, config);
+  return response.data;
+};
+
+export const reactQueryFetcher = <T>({
   queryKey,
   pageParam,
 }: QueryFunctionContext<QueryKeyT>): Promise<T> => {
@@ -56,13 +71,36 @@ export const useLoadMore = <T, S = undefined>({
   >({
     queryKey: [url!, params],
     queryFn: ({queryKey, pageParam = 1}) =>
-      fetcher({queryKey, pageParam, meta}),
+      reactQueryFetcher({queryKey, pageParam, meta}),
 
     getNextPageParam: (lastPage, allPages) =>
       lastPage.next ? allPages.length + 1 : undefined,
     enabled: !!url,
     ...config,
   });
+
+  return context;
+};
+
+export const useFetch = <T>({
+  url,
+  config,
+  meta,
+  params,
+}: {
+  url: string | undefined;
+  params?: object;
+  config?: UseQueryOptions<T, Error, T, QueryKeyT>;
+  meta?: QueryMeta;
+}) => {
+  const context = useQuery<T, Error, T, QueryKeyT>(
+    [url!, params],
+    ({queryKey}) => reactQueryFetcher({queryKey, meta}),
+    {
+      ...config,
+      enabled: !!url && (config?.enabled ?? true),
+    },
+  );
 
   return context;
 };
