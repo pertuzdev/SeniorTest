@@ -2,7 +2,7 @@ import {Header} from '@/components';
 import {AppText, Avatar} from '@/components/ui';
 import {useCustomTheme} from '@/hooks/useCustomTheme';
 import React from 'react';
-import {View} from 'react-native';
+import {ScrollView, View} from 'react-native';
 import {styles} from './CharacterDetailScreen.styles';
 import {typography} from '@/theme';
 import {
@@ -15,7 +15,7 @@ const CharacterDetailScreen = () => {
   const {colors} = useCustomTheme();
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <Header title="Character" />
+      <Header title="Character" isBackButton />
       <View style={[styles.profile, {backgroundColor: colors.primary}]}>
         <View>
           <Avatar name="Luke Sky" width={90} height={90} />
@@ -37,6 +37,38 @@ const CharacterDetailScreen = () => {
           </View>
         </View>
       </View>
+      <ScrollView>
+        <View style={[styles.infoTable, {backgroundColor: colors.card}]}>
+          <View style={styles.infoRow}>
+            <AppText
+              style={[
+                typography.smallLabel,
+                styles.infoRowLabel,
+                {color: colors.mediumGray},
+              ]}>
+              height
+            </AppText>
+            <View>
+              <AppText style={[typography.text]}>100cm</AppText>
+            </View>
+            <View style={[styles.line, {backgroundColor: colors.border}]} />
+          </View>
+          <View style={styles.infoRow}>
+            <AppText
+              style={[
+                typography.smallLabel,
+                styles.infoRowLabel,
+                {color: colors.mediumGray},
+              ]}>
+              height
+            </AppText>
+            <View>
+              <AppText style={[typography.text]}>100cm</AppText>
+            </View>
+            <View style={[styles.line, {backgroundColor: colors.border}]} />
+          </View>
+        </View>
+      </ScrollView>
     </View>
   );
 };

@@ -11,7 +11,14 @@ import {ArrowLeftIcon} from '../ui/icons/icons';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
 
-const Header = ({title, isThemeToggle = false}: HeaderProps) => {
+const ICON_SIZE = 24;
+const ZERO = 0;
+
+const Header = ({
+  title,
+  isThemeToggle = false,
+  isBackButton = false,
+}: HeaderProps) => {
   const safeArea = useSafeAreaInsets();
   const {colors} = useTheme();
   const navigation =
@@ -37,10 +44,19 @@ const Header = ({title, isThemeToggle = false}: HeaderProps) => {
       )}
 
       <View style={[styles.headerContainer, {backgroundColor: colors.primary}]}>
-        <Pressable onPress={handleGoBack}>
-          <ArrowLeftIcon width={24} height={24} />
-        </Pressable>
-        <View style={styles.rowWrapper}>
+        {isBackButton && (
+          <Pressable onPress={handleGoBack}>
+            <ArrowLeftIcon width={24} height={24} />
+          </Pressable>
+        )}
+        <View
+          style={[
+            styles.rowWrapper,
+            {
+              marginLeft: isBackButton ? -ICON_SIZE : ZERO,
+              marginRight: isThemeToggle ? -ICON_SIZE : ZERO,
+            },
+          ]}>
           <Text style={[styles.title, typography.title]}>{title}</Text>
         </View>
         {isThemeToggle && <ThemeToggle />}

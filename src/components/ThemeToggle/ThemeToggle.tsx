@@ -15,9 +15,9 @@ const ThemeToggle = () => {
   return (
     <Pressable onPress={handlePress} hitSlop={10}>
       {!theme ? null : theme === 'dark' ? (
-        <MoonIcon width={20} height={20} />
+        <MoonIcon width={24} height={24} />
       ) : (
-        <SunIcon width={20} height={20} />
+        <SunIcon width={24} height={24} />
       )}
     </Pressable>
   );

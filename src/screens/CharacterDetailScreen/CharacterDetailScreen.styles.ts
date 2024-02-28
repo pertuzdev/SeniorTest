@@ -8,7 +8,7 @@ export const styles = StyleSheet.create({
     width: '100%',
     paddingVertical: 20,
     alignItems: 'center',
-    gap: 8,
+    gap: 12,
   },
   characterName: {
     fontWeight: '500',
@@ -21,5 +21,21 @@ export const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 8,
     borderRadius: 50,
+  },
+  infoTable: {
+    margin: 20,
+    borderRadius: 10,
+    paddingBottom: 10,
+  },
+  infoRow: {
+    paddingHorizontal: 16,
+    paddingTop: 10,
+  },
+  infoRowLabel: {
+    marginBottom: 6,
+  },
+  line: {
+    height: 1,
+    marginTop: 10,
   },
 });
