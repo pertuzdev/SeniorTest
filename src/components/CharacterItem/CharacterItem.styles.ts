@@ -14,7 +14,6 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   characterContentWrapper: {
-    backgroundColor: 'white',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -27,9 +26,5 @@ export const styles = StyleSheet.create({
   },
   characterName: {
     fontWeight: 'bold',
-    color: 'black',
-  },
-  characterDateOfBirth: {
-    color: 'black',
   },
 });
