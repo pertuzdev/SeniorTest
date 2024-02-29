@@ -11,22 +11,26 @@
 
 @implementation DeviceInfoModule
 
-RCT_EXPORT_MODULE(DeviceInfoModule)
-RCT_EXPORT_METHOD(getDeviceInfo:(RCTResponseSenderBlock)callback)
-{
+
+RCT_EXPORT_MODULE();
+
+RCT_EXPORT_METHOD(getDeviceInfo:(RCTResponseSenderBlock)callback) {
   UIDevice *device = [UIDevice currentDevice];
-  NSString *deviceModel = [currentDevice model];
-  NSString *osVersion = [currentDevice systemVersion];
+  NSString *deviceModel = [device model];
+  NSString *osVersion = [device systemVersion];
+  
+  
   [device setBatteryMonitoringEnabled:YES];
-  CGFloat batteryLevel = [currentDevice batteryLevel] * 100;
-
-
+  float batteryLevel = [device batteryLevel] * 100;
+  
+  
   NSDictionary *deviceInfo = @{
                                @"model": deviceModel,
                                @"osVersion": osVersion,
                                @"batteryLevel": @(batteryLevel)
-                              };
-
+                               };
+  
+  
   callback(@[[NSNull null], deviceInfo]);
 }
 

@@ -11,27 +11,26 @@ import useDeviceInfo from '@/hooks/useDeviceInfo';
 const SettingsScreen = () => {
   const {colors} = useCustomTheme();
   const {batteryLevel, model, osVersion} = useDeviceInfo();
-  console.log('model', model);
 
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
       <Header
         title="Ajustes"
         backgroundColor={colors.secondary}
-        titleColor="#fff"
+        titleColor={colors.white}
       />
       <View style={styles.contentWrapper}>
         <View style={styles.cardWrapper}>
           <CardInfo label="Modelo">
-            <AppText style={styles.phoneData}>iPhone</AppText>
+            <AppText style={styles.phoneData}>{model}</AppText>
           </CardInfo>
           <CardInfo label="Sistema operativo">
-            <AppText style={styles.phoneData}>17.0.2</AppText>
+            <AppText style={styles.phoneData}>{osVersion}</AppText>
           </CardInfo>
         </View>
         <View style={styles.cardWrapper}>
           <CardInfo label="Batería">
-            <Battery />
+            <Battery batteryLevel={batteryLevel} />
           </CardInfo>
         </View>
       </View>

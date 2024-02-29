@@ -10,18 +10,21 @@ interface DeviceInfo {
   osVersion: string;
 }
 
-const useDeviceInfo = () => {
-  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo>();
+const defaultValues = {
+  model: 'N/A',
+  batteryLevel: 0,
+  osVersion: 'N/A',
+};
 
-  console.log('dv=3', NativeModules?.DeviceInfoModule);
+const useDeviceInfo = () => {
+  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo>(defaultValues);
 
   useEffect(() => {
     DeviceInfoModule?.getDeviceInfo((error: any, result: DeviceInfo) => {
       if (error) {
         toastNotification({
           type: 'error',
-          message:
-            'Something went wrong to get your device info, please try again later',
+          message: 'Something went wrong, please try again later',
           position: 'top',
         });
         return;

@@ -8,6 +8,10 @@ export type ITheme = {
     activeTab: string;
     inactiveTab: string;
     mediumGray: string;
+    black: string;
+    white: string;
+    green: string;
+    stale: string;
   };
 } & Theme;
 
@@ -32,6 +36,10 @@ export const theme: CustomTheme = {
       card: '#FFFFFF',
       lightGray: '#00000026',
       mediumGray: '#00000066',
+      black: '#000',
+      white: '#FFF',
+      green: '#47bb78',
+      stale: '#edf2f6',
     },
   },
   dark: {
@@ -49,6 +57,10 @@ export const theme: CustomTheme = {
       card: '#09090b',
       lightGray: '#00000026',
       mediumGray: '#d6d4d4',
+      black: '#000',
+      white: '#FFF',
+      green: '#47bb78',
+      stale: '#edf2f6',
     },
   },
 };

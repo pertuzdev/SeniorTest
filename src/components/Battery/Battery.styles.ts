@@ -13,8 +13,6 @@ export const styles = StyleSheet.create({
     borderWidth: 0.1,
     borderColor: '#fff',
     borderRadius: 100,
-    backgroundColor: '#47bb78',
-    //backgroundColor: '#edf2f6'
   },
   batteryPercentage: {
     position: 'absolute',
