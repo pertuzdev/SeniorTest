@@ -1,5 +1,5 @@
 import React from 'react';
-import {AppText, BulletItem, Spinner} from '../ui';
+import {AppText, BulletItem, Spinner} from '@/components/ui';
 import {typography} from '@/theme';
 
 const CharacterBulletList = ({

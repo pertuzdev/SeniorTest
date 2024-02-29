@@ -11,7 +11,7 @@ export enum HomeNavigatorRoutes {
   CharacterDetail = 'CharacterDetail',
 }
 
-const HomeNavigator = () => {
+export const HomeNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -27,5 +27,3 @@ const HomeNavigator = () => {
     </Stack.Navigator>
   );
 };
-
-export default HomeNavigator;

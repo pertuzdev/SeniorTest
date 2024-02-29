@@ -1,12 +1,12 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import {getNameInitials} from '@/utils/getNameInitials';
+import {getNameInitials} from '@/utils';
 import {styles} from './Avatar.styles';
 import {useCustomTheme} from '@/hooks/useCustomTheme';
 import {AppText} from '@/components/ui';
 
-const Avatar = ({
+export const Avatar = ({
   name,
   height = 50,
   width = 50,
@@ -28,5 +28,3 @@ const Avatar = ({
     </View>
   );
 };
-
-export default Avatar;

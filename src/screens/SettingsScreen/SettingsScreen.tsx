@@ -1,12 +1,9 @@
-import {Header} from '@/components';
-import Battery from '@/components/Battery/Battery';
-import {AppText} from '@/components/ui';
-import CardInfo from '@/components/ui/CardInfo/CardInfo';
-import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {Battery, Header} from '@/components';
+import {AppText, CardInfo} from '@/components/ui';
+import {useCustomTheme, useDeviceInfo} from '@/hooks';
 import React from 'react';
 import {View} from 'react-native';
 import {styles} from './SettingsScreen.styles';
-import useDeviceInfo from '@/hooks/useDeviceInfo';
 
 const SettingsScreen = () => {
   const {colors} = useCustomTheme();

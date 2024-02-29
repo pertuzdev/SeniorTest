@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react';
 import {Film, Planet, Species, StarWarsCharacter} from './interfaces';
 import {routes} from './routes';
 import {DEFAULT_SPECIES_URL} from './contants';
-import {toastNotification} from '@/utils/toast';
+import {toastNotification} from '@/utils';
 
 export const useGetCharacters = ({search}: {search?: string}) => {
   return useLoadMore<StarWarsCharacter, {search: string | undefined}>({

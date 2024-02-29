@@ -1,9 +1,9 @@
+import {AppText} from '@/components/ui';
+import {useCustomTheme} from '@/hooks';
+import {typography} from '@/theme';
 import React from 'react';
 import {View} from 'react-native';
-import {AppText} from '../ui';
 import {styles} from './Battery.styles';
-import {typography} from '@/theme';
-import {useCustomTheme} from '@/hooks/useCustomTheme';
 
 const Battery = ({batteryLevel}: {batteryLevel: number}) => {
   const {colors} = useCustomTheme();

@@ -1,10 +1,10 @@
+import {TabBarIcon} from '@/components/ui/TabBarIcon/TabBarIcon';
+import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {HomeNavigator} from '@/navigation/HomeNavigator';
 import SettingsScreen from '@/screens/SettingsScreen/SettingsScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import HomeNavigator from '../HomeNavigator/HomeNavigator';
 import {BottomTabNavigatorParamList} from './AppNavigator.types';
-import {TabBarIcon} from '@/components/ui/TabBarIcon/TabBarIcon';
-import {useCustomTheme} from '@/hooks/useCustomTheme';
 
 export enum AppNavigatorRoutes {
   Home = 'Home',
@@ -12,7 +12,7 @@ export enum AppNavigatorRoutes {
 }
 
 const Tabs = createBottomTabNavigator<BottomTabNavigatorParamList>();
-const AppNavigator = () => {
+export const AppNavigator = () => {
   const {colors} = useCustomTheme();
   const renderTabBarIcon = ({
     color,
@@ -49,5 +49,3 @@ const AppNavigator = () => {
     </Tabs.Navigator>
   );
 };
-
-export default AppNavigator;

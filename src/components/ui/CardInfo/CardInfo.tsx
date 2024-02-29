@@ -5,7 +5,13 @@ import {styles} from './CardInfo.styles';
 import {shadow, typography} from '@/theme';
 import {useCustomTheme} from '@/hooks/useCustomTheme';
 
-const CardInfo = ({children, label}: {children: ReactNode; label: string}) => {
+export const CardInfo = ({
+  children,
+  label,
+}: {
+  children: ReactNode;
+  label: string;
+}) => {
   const {colors} = useCustomTheme();
   return (
     <View style={[styles.card, shadow.primary, {backgroundColor: colors.card}]}>
@@ -21,5 +27,3 @@ const CardInfo = ({children, label}: {children: ReactNode; label: string}) => {
     </View>
   );
 };
-
-export default CardInfo;

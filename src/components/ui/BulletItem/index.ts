@@ -1,1 +1,1 @@
-export {default as BulletItem} from './BulletItem';
+export {BulletItem} from './BulletItem';

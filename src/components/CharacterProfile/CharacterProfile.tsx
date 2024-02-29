@@ -1,16 +1,18 @@
 import React from 'react';
 import {View} from 'react-native';
-import {AppText, Avatar} from '../ui';
+
 import {
   MarsIcon,
   RocketIcon,
   ThumbsDownIcon,
   ThumbsUpIcon,
   VenusIcon,
-} from '../ui/icons/icons';
+  AppText,
+  Avatar,
+} from '@/components/ui';
 import {typography} from '@/theme';
 import {styles} from './CharacterProfile.styles';
-import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {useCustomTheme} from '@/hooks';
 import {useCharacter} from '@/context/CharacterContext';
 
 const CharacterProfile = () => {

@@ -1,4 +1,4 @@
-import {toastNotification} from '@/utils/toast';
+import {toastNotification} from '@/utils';
 import {useEffect, useState} from 'react';
 import {NativeModules} from 'react-native';
 
@@ -16,7 +16,7 @@ const defaultValues = {
   osVersion: 'N/A',
 };
 
-const useDeviceInfo = () => {
+export const useDeviceInfo = () => {
   const [deviceInfo, setDeviceInfo] = useState<DeviceInfo>(defaultValues);
 
   useEffect(() => {
@@ -36,5 +36,3 @@ const useDeviceInfo = () => {
 
   return {...deviceInfo};
 };
-
-export default useDeviceInfo;

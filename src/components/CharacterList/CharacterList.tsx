@@ -1,12 +1,11 @@
 import React, {useCallback} from 'react';
 
-import {CharacterItem} from '@/components';
+import {CharacterItem, ScreenMessage} from '@/components';
 import {CharacterListLoader, Spinner} from '@/components/ui';
 import {StarWarsCharacter} from '@/modules/Wiki/interfaces';
 import {useGetCharacters} from '@/modules/Wiki/services';
 import {FlashList} from '@shopify/flash-list';
 import {RefreshControl, View} from 'react-native';
-import ScreenMessage from '../ScreenMessage/ScreenMessage';
 import {CharacterListProps} from './CharacterList.types';
 
 const CharacterList = ({search = ''}: CharacterListProps) => {

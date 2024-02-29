@@ -5,13 +5,11 @@ import {useNavigation} from '@react-navigation/native';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Pressable, View} from 'react-native';
-import {useCustomTheme} from '../../hooks/useCustomTheme';
-import {AppText} from '../ui';
-import Avatar from '../ui/Avatar/Avatar';
-import {AngleRight} from '../ui/icons/icons';
+import {AngleRight, AppText, Avatar} from '@/components/ui';
+import {useCharacter} from '@/context/CharacterContext';
+import {useCustomTheme} from '@/hooks';
 import {styles} from './CharacterItem.styles';
 import {CharacterItemProps} from './CharacterItem.types';
-import {useCharacter} from '@/context/CharacterContext';
 
 const CharacterItem = ({character}: CharacterItemProps) => {
   const {colors} = useCustomTheme();
@@ -43,7 +41,7 @@ const CharacterItem = ({character}: CharacterItemProps) => {
             <AppText style={[typography.text]}>{character.birth_year}</AppText>
           </View>
         </View>
-        <AngleRight width={20} height={20} />
+        <AngleRight width={20} height={20} color={colors.text} />
       </View>
     </Pressable>
   );

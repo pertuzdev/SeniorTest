@@ -1,7 +1,8 @@
 import React from 'react';
-import {AppNavigatorRoutes} from '@/navigation/AppNavigator/AppNavigator';
-import {IconsSelector} from '@/navigation/AppNavigator/AppNavigator.types';
-import {HomeIcon, SettingIcon} from '../icons/icons';
+import {AppNavigatorRoutes} from '@/navigation/AppNavigator';
+
+import {HomeIcon, SettingIcon} from '@/components/ui';
+import {IconsSelector} from './TabBarIcon.types';
 
 export const TabBarIcon = ({
   color,
@@ -10,7 +11,7 @@ export const TabBarIcon = ({
   color: string;
   routeName: AppNavigatorRoutes;
 }) => {
-  const icon: IconsSelector = {
+  const Icon: IconsSelector = {
     [AppNavigatorRoutes.Home]: (
       <HomeIcon color={color} width={24} height={24} />
     ),
@@ -19,5 +20,5 @@ export const TabBarIcon = ({
     ),
   };
 
-  return icon[routeName];
+  return Icon[routeName];
 };

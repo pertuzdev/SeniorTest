@@ -1,4 +1,4 @@
-import {MoonIcon, SunIcon} from '@/components/ui/icons/icons';
+import {MoonIcon, SunIcon} from '@/components/ui';
 import {useUserTheme} from '@/context/ThemeContext';
 import React, {useTransition} from 'react';
 import {Pressable} from 'react-native';

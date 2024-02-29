@@ -1,6 +1,5 @@
+import {HEADER_HEIGHT} from '@/utils';
 import {StyleSheet} from 'react-native';
-
-const HEADER_HEIGHT = 50;
 
 export const styles = StyleSheet.create({
   statusBar: {

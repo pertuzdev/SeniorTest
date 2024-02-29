@@ -1,8 +1,12 @@
-import {CharacterInfoRow, CharacterProfile, Header} from '@/components';
-import CharacterBulletList from '@/components/CharacterBulletList/CharacterBulletList';
+import {
+  CharacterBulletList,
+  CharacterInfoRow,
+  CharacterProfile,
+  Header,
+} from '@/components';
 import {AppText, Spinner} from '@/components/ui';
 import {useCharacter} from '@/context/CharacterContext';
-import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {useCustomTheme} from '@/hooks';
 import {
   useGetCharacterHomeWorld,
   useGetFilms,

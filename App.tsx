@@ -9,7 +9,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 
-import {toastConfig, toastNotification} from '@/utils/toast';
+import {toastConfig, toastNotification} from '@/utils';
 import Toast from 'react-native-toast-message';
 import BootSplash from 'react-native-bootsplash';
 

@@ -1,8 +1,8 @@
-import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {useCustomTheme} from '@/hooks';
 import {typography} from '@/theme';
 import React from 'react';
 import {View} from 'react-native';
-import {AppText} from '../ui';
+import {AppText} from '@/components/ui';
 import {styles} from './CharacterInfoRow.styles';
 import {CharacterRowProps} from './CharacterInfoRow.types';
 

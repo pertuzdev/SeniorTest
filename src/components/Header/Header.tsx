@@ -1,20 +1,17 @@
 import {useNavigation} from '@react-navigation/native';
 
-import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {ThemeToggle} from '@/components';
+import {ArrowLeftIcon, FocusAwareStatusBar} from '@/components/ui';
+import {useCustomTheme} from '@/hooks';
 import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
 import {typography} from '@/theme';
 import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
 import {Platform, Pressable, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
-import ThemeToggle from '../ThemeToggle/ThemeToggle';
-import FocusAwareStatusBar from '../ui/FocusAwareStatusBar/FocusAwareStatusBar';
-import {ArrowLeftIcon} from '../ui/icons/icons';
 import {styles} from './Header.styles';
 import {HeaderProps} from './Header.types';
-
-const ICON_SIZE = 24;
-const ZERO = 0;
+import {HEADER_ICON_SIZE, ZERO} from '@/utils';
 
 const Header = ({
   title,
@@ -62,8 +59,8 @@ const Header = ({
             style={[
               typography.title,
               {
-                marginLeft: isBackButton ? -ICON_SIZE : ZERO,
-                marginRight: isThemeToggle ? -ICON_SIZE : ZERO,
+                marginLeft: isBackButton ? -HEADER_ICON_SIZE : ZERO,
+                marginRight: isThemeToggle ? -HEADER_ICON_SIZE : ZERO,
                 color: isSettings ? colors.white : colors.black,
               },
             ]}>

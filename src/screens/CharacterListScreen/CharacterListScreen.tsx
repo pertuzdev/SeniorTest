@@ -1,6 +1,5 @@
-import {Header} from '@/components';
-import CharacterList from '@/components/CharacterList/CharacterList';
-import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {CharacterList, Header} from '@/components';
+import {useCustomTheme} from '@/hooks';
 import React, {useState} from 'react';
 import {TextInput, View} from 'react-native';
 import {styles} from './CharacterListScreen.styles';
