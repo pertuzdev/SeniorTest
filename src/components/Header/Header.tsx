@@ -1,15 +1,17 @@
-import {useNavigation, useTheme} from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
+import {useCustomTheme} from '@/hooks/useCustomTheme';
+import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
 import {typography} from '@/theme';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import React from 'react';
-import {Platform, Pressable, StatusBar, Text, View} from 'react-native';
+import {Platform, Pressable, Text, View} from 'react-native';
 import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import FocusAwareStatusBar from '../ui/FocusAwareStatusBar/FocusAwareStatusBar';
+import {ArrowLeftIcon} from '../ui/icons/icons';
 import {styles} from './Header.styles';
 import {HeaderProps} from './Header.types';
-import {ArrowLeftIcon} from '../ui/icons/icons';
-import {NativeStackNavigationProp} from '@react-navigation/native-stack';
-import {HomeNavigatorParamList} from '@/navigation/HomeNavigator/HomeNavigator.types';
 
 const ICON_SIZE = 24;
 const ZERO = 0;
@@ -18,12 +20,11 @@ const Header = ({
   title,
   isThemeToggle = false,
   isBackButton = false,
-  backgroundColor,
-  titleColor,
+  isSettings = false,
 }: HeaderProps) => {
   const safeArea = useSafeAreaInsets();
-  const {colors} = useTheme();
-  const bgColorSelected = backgroundColor || colors.primary;
+  const {colors} = useCustomTheme();
+  const bgColorSelected = isSettings ? colors.secondary : colors.primary;
   const navigation =
     useNavigation<NativeStackNavigationProp<HomeNavigatorParamList>>();
 
@@ -43,7 +44,10 @@ const Header = ({
           ]}
         />
       ) : (
-        <StatusBar barStyle="dark-content" backgroundColor={bgColorSelected} />
+        <FocusAwareStatusBar
+          barStyle={isSettings ? 'light-content' : 'dark-content'}
+          backgroundColor={bgColorSelected}
+        />
       )}
 
       <View
@@ -56,12 +60,11 @@ const Header = ({
         <View style={[styles.rowWrapper]}>
           <Text
             style={[
-              styles.title,
               typography.title,
               {
                 marginLeft: isBackButton ? -ICON_SIZE : ZERO,
                 marginRight: isThemeToggle ? -ICON_SIZE : ZERO,
-                color: titleColor,
+                color: isSettings ? colors.white : colors.black,
               },
             ]}>
             {title}

@@ -14,11 +14,7 @@ const SettingsScreen = () => {
 
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
-      <Header
-        title="Ajustes"
-        backgroundColor={colors.secondary}
-        titleColor={colors.white}
-      />
+      <Header title="Ajustes" isSettings />
       <View style={styles.contentWrapper}>
         <View style={styles.cardWrapper}>
           <CardInfo label="Modelo">
