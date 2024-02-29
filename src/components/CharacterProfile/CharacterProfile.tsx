@@ -36,14 +36,14 @@ const CharacterProfile = () => {
           ) : character?.gender === 'female' ? (
             <VenusIcon width={30} height={30} />
           ) : (
-            <AppText>N/A</AppText>
+            <AppText style={{color: colors.black}}>N/A</AppText>
           )}
         </View>
         <View style={styles.badge}>
           {character?.starships && character.starships.length > 0 ? (
             <RocketIcon width={30} height={30} />
           ) : (
-            <AppText>N/A</AppText>
+            <AppText style={{color: colors.black}}>N/A</AppText>
           )}
         </View>
         <View style={styles.badge}>

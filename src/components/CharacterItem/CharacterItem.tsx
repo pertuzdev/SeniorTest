@@ -10,12 +10,12 @@ import {useCharacter} from '@/context/CharacterContext';
 import {useCustomTheme} from '@/hooks';
 import {styles} from './CharacterItem.styles';
 import {CharacterItemProps} from './CharacterItem.types';
-import {separateNumberAndLetters} from '@/utils/separateNumbersAndLetters';
+import {formatBirthDate} from '@/utils/formatBirthDate';
 
 const CharacterItem = ({character}: CharacterItemProps) => {
   const {colors} = useCustomTheme();
   const {setCurrent} = useCharacter();
-  const formattedBirthYear = separateNumberAndLetters(character.birth_year);
+  const formattedBirthYear = formatBirthDate(character.birth_year);
 
   const navigation =
     useNavigation<NativeStackNavigationProp<HomeNavigatorParamList>>();
