@@ -6,9 +6,13 @@ import {useCustomTheme} from '@/hooks/useCustomTheme';
 import React from 'react';
 import {View} from 'react-native';
 import {styles} from './SettingsScreen.styles';
+import useDeviceInfo from '@/hooks/useDeviceInfo';
 
 const SettingsScreen = () => {
   const {colors} = useCustomTheme();
+  const {batteryLevel, model, osVersion} = useDeviceInfo();
+  console.log('model', model);
+
   return (
     <View style={[styles.container, {backgroundColor: colors.background}]}>
       <Header
