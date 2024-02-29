@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 
 import {CharacterProvider} from '@/context/CharacterContext';
 import {ThemeProvider} from '@/context/ThemeContext';
@@ -11,6 +11,7 @@ import {
 
 import {toastConfig, toastNotification} from '@/utils/toast';
 import Toast from 'react-native-toast-message';
+import BootSplash from 'react-native-bootsplash';
 
 function App(): React.JSX.Element {
   const queryClient = new QueryClient({
@@ -24,6 +25,13 @@ function App(): React.JSX.Element {
       },
     }),
   });
+  useEffect(() => {
+    const init = async () => {};
+
+    init().finally(async () => {
+      await BootSplash.hide({fade: true});
+    });
+  }, []);
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider>
